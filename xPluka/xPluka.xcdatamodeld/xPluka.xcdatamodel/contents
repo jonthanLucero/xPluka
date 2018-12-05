@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Photo" representedClassName="Photo" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlImage" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="touristicPlace" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TouristicPlace" inverseName="photos" inverseEntity="TouristicPlace" syncable="YES"/>
+    </entity>
+    <entity name="TouristicPlace" representedClassName="TouristicPlace" syncable="YES" codeGenerationType="class">
+        <attribute name="tpCommentary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tpDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tpLatitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tpLongitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tpName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tpQualification" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tpType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="photos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="touristicPlace" inverseEntity="Photo" syncable="YES"/>
+        <relationship name="visitas" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Visit" inverseName="touristiPlaceVisit" inverseEntity="Visit" syncable="YES"/>
+    </entity>
+    <entity name="Visit" representedClassName="Visit" syncable="YES" codeGenerationType="class">
+        <attribute name="beginHour" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endHour" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plannficationDate" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="touristiPlaceVisit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TouristicPlace" inverseName="visitas" inverseEntity="TouristicPlace" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TouristicPlace" positionX="-110" positionY="-513" width="128" height="178"/>
+        <element name="Photo" positionX="124" positionY="-184" width="128" height="103"/>
+        <element name="Visit" positionX="-353" positionY="-228" width="128" height="120"/>
+    </elements>
+</model>
