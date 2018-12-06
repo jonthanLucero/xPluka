@@ -19,6 +19,7 @@
 		B58CF17921B8748D00854D40 /* TouristicPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF17821B8748D00854D40 /* TouristicPlace.swift */; };
 		B58CF17B21B8796600854D40 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF17A21B8796600854D40 /* Visit.swift */; };
 		B58CF17D21B87A9D00854D40 /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF17C21B87A9D00854D40 /* Visit+CoreDataProperties.swift */; };
+		B58CF18321B8A51D00854D40 /* xpluka_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B58CF18221B8A51D00854D40 /* xpluka_logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B58CF17821B8748D00854D40 /* TouristicPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristicPlace.swift; sourceTree = "<group>"; };
 		B58CF17A21B8796600854D40 /* Visit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
 		B58CF17C21B87A9D00854D40 /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B58CF18221B8A51D00854D40 /* xpluka_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xpluka_logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				B58CF15E21B867CB00854D40 /* ViewController.swift */,
 				B58CF16021B867CB00854D40 /* Main.storyboard */,
 				B58CF16621B867CD00854D40 /* Assets.xcassets */,
+				B58CF18221B8A51D00854D40 /* xpluka_logo.png */,
 				B58CF16821B867CD00854D40 /* LaunchScreen.storyboard */,
 				B58CF16B21B867CD00854D40 /* Info.plist */,
 				B58CF16321B867CB00854D40 /* xPluka.xcdatamodeld */,
@@ -154,6 +157,7 @@
 				B58CF16A21B867CD00854D40 /* LaunchScreen.storyboard in Resources */,
 				B58CF16721B867CD00854D40 /* Assets.xcassets in Resources */,
 				B58CF16221B867CB00854D40 /* Main.storyboard in Resources */,
+				B58CF18321B8A51D00854D40 /* xpluka_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
