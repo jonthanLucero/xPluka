@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B528A66E21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png in Resources */ = {isa = PBXBuildFile; fileRef = B528A66D21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png */; };
+		B528A67121C08838002B3272 /* ViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A67021C08838002B3272 /* ViewController+Helper.swift */; };
+		B528A67321C08EA2002B3272 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A67221C08EA2002B3272 /* CoreDataStack.swift */; };
 		B58CF15D21B867CB00854D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF15C21B867CB00854D40 /* AppDelegate.swift */; };
 		B58CF15F21B867CB00854D40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF15E21B867CB00854D40 /* ViewController.swift */; };
 		B58CF16221B867CB00854D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58CF16021B867CB00854D40 /* Main.storyboard */; };
@@ -20,9 +23,20 @@
 		B58CF17B21B8796600854D40 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF17A21B8796600854D40 /* Visit.swift */; };
 		B58CF17D21B87A9D00854D40 /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF17C21B87A9D00854D40 /* Visit+CoreDataProperties.swift */; };
 		B58CF18321B8A51D00854D40 /* xpluka_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B58CF18221B8A51D00854D40 /* xpluka_logo.png */; };
+		B5B6242F21B9975B00588CE5 /* TPRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6242E21B9975B00588CE5 /* TPRegisterViewController.swift */; };
+		B5B6243D21B9ADE100588CE5 /* icon_tpAdd_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B6243921B9ADE000588CE5 /* icon_tpAdd_portrait.png */; };
+		B5B6243E21B9ADE100588CE5 /* icon_tpVisit_landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B6243A21B9ADE000588CE5 /* icon_tpVisit_landscape.png */; };
+		B5B6243F21B9ADE100588CE5 /* icon_tpVisit_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B6243B21B9ADE000588CE5 /* icon_tpVisit_portrait.png */; };
+		B5B6244021B9ADE100588CE5 /* icon_tpAdd_landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B6243C21B9ADE000588CE5 /* icon_tpAdd_landscape.png */; };
+		B5B6244221BB275500588CE5 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6244121BB275500588CE5 /* MainMapViewController.swift */; };
+		B5B6244421BB31D600588CE5 /* icon_tp_setLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B6244321BB31D500588CE5 /* icon_tp_setLocation.png */; };
+		B5B6244621BB336900588CE5 /* icon_tp_setLocation2.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B6244521BB336900588CE5 /* icon_tp_setLocation2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B528A66D21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_setPhotoGallery.png; sourceTree = "<group>"; };
+		B528A67021C08838002B3272 /* ViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Helper.swift"; sourceTree = "<group>"; };
+		B528A67221C08EA2002B3272 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		B58CF15921B867CB00854D40 /* xPluka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xPluka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58CF15C21B867CB00854D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B58CF15E21B867CB00854D40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +52,14 @@
 		B58CF17A21B8796600854D40 /* Visit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
 		B58CF17C21B87A9D00854D40 /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B58CF18221B8A51D00854D40 /* xpluka_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xpluka_logo.png; sourceTree = "<group>"; };
+		B5B6242E21B9975B00588CE5 /* TPRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPRegisterViewController.swift; sourceTree = "<group>"; };
+		B5B6243921B9ADE000588CE5 /* icon_tpAdd_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tpAdd_portrait.png; sourceTree = "<group>"; };
+		B5B6243A21B9ADE000588CE5 /* icon_tpVisit_landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tpVisit_landscape.png; sourceTree = "<group>"; };
+		B5B6243B21B9ADE000588CE5 /* icon_tpVisit_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tpVisit_portrait.png; sourceTree = "<group>"; };
+		B5B6243C21B9ADE000588CE5 /* icon_tpAdd_landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tpAdd_landscape.png; sourceTree = "<group>"; };
+		B5B6244121BB275500588CE5 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
+		B5B6244321BB31D500588CE5 /* icon_tp_setLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_setLocation.png; sourceTree = "<group>"; };
+		B5B6244521BB336900588CE5 /* icon_tp_setLocation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_setLocation2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B528A66F21C087F8002B3272 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B528A67021C08838002B3272 /* ViewController+Helper.swift */,
+				B528A67221C08EA2002B3272 /* CoreDataStack.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B58CF15021B867CB00854D40 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +101,9 @@
 		B58CF15B21B867CB00854D40 /* xPluka */ = {
 			isa = PBXGroup;
 			children = (
+				B528A66F21C087F8002B3272 /* Helpers */,
+				B5B6243021B99A3A00588CE5 /* Icons */,
+				B5B6242D21B9971B00588CE5 /* View Controllers */,
 				B58CF17121B86FC600854D40 /* Model Entity */,
 				B58CF15C21B867CB00854D40 /* AppDelegate.swift */,
 				B58CF15E21B867CB00854D40 /* ViewController.swift */,
@@ -94,6 +128,29 @@
 				B58CF17C21B87A9D00854D40 /* Visit+CoreDataProperties.swift */,
 			);
 			path = "Model Entity";
+			sourceTree = "<group>";
+		};
+		B5B6242D21B9971B00588CE5 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5B6242E21B9975B00588CE5 /* TPRegisterViewController.swift */,
+				B5B6244121BB275500588CE5 /* MainMapViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B5B6243021B99A3A00588CE5 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				B528A66D21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png */,
+				B5B6244521BB336900588CE5 /* icon_tp_setLocation2.png */,
+				B5B6244321BB31D500588CE5 /* icon_tp_setLocation.png */,
+				B5B6243C21B9ADE000588CE5 /* icon_tpAdd_landscape.png */,
+				B5B6243921B9ADE000588CE5 /* icon_tpAdd_portrait.png */,
+				B5B6243A21B9ADE000588CE5 /* icon_tpVisit_landscape.png */,
+				B5B6243B21B9ADE000588CE5 /* icon_tpVisit_portrait.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,8 +212,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58CF16A21B867CD00854D40 /* LaunchScreen.storyboard in Resources */,
+				B5B6243F21B9ADE100588CE5 /* icon_tpVisit_portrait.png in Resources */,
+				B5B6244021B9ADE100588CE5 /* icon_tpAdd_landscape.png in Resources */,
+				B5B6244421BB31D600588CE5 /* icon_tp_setLocation.png in Resources */,
 				B58CF16721B867CD00854D40 /* Assets.xcassets in Resources */,
+				B5B6244621BB336900588CE5 /* icon_tp_setLocation2.png in Resources */,
 				B58CF16221B867CB00854D40 /* Main.storyboard in Resources */,
+				B5B6243D21B9ADE100588CE5 /* icon_tpAdd_portrait.png in Resources */,
+				B5B6243E21B9ADE100588CE5 /* icon_tpVisit_landscape.png in Resources */,
+				B528A66E21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png in Resources */,
 				B58CF18321B8A51D00854D40 /* xpluka_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,15 +232,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5B6242F21B9975B00588CE5 /* TPRegisterViewController.swift in Sources */,
 				B58CF17721B8745F00854D40 /* TouristicPlace+CoreDataProperties.swift in Sources */,
 				B58CF16521B867CB00854D40 /* xPluka.xcdatamodeld in Sources */,
 				B58CF17921B8748D00854D40 /* TouristicPlace.swift in Sources */,
 				B58CF15F21B867CB00854D40 /* ViewController.swift in Sources */,
 				B58CF17D21B87A9D00854D40 /* Visit+CoreDataProperties.swift in Sources */,
+				B528A67321C08EA2002B3272 /* CoreDataStack.swift in Sources */,
 				B58CF17321B8700500854D40 /* Photo+CoreDataProperties.swift in Sources */,
 				B58CF17B21B8796600854D40 /* Visit.swift in Sources */,
+				B528A67121C08838002B3272 /* ViewController+Helper.swift in Sources */,
 				B58CF15D21B867CB00854D40 /* AppDelegate.swift in Sources */,
 				B58CF17521B871EE00854D40 /* Photo.swift in Sources */,
+				B5B6244221BB275500588CE5 /* MainMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
