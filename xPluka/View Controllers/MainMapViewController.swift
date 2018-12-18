@@ -9,18 +9,53 @@
 import Foundation
 import MapKit
 
-public class MainMapViewController : UIViewController, MKMapViewDelegate
+public class MainMapViewController : UIViewController, MKMapViewDelegate,TPRegisterViewControllerPassDataBackward
 {
+    //Allows to reload the map status from the registerTPViewController,when a new TP is created
+    func isReloadMap(_ mapStatus:Bool)
+    {
+        self.reloadMapStatus = mapStatus
+    }
+    
     @IBOutlet weak var mapView: MKMapView!
+    
+    var transactionMode = ""
+    var viewControllerTitleForTransactionMode = ""
+    var touristicPlace:TouristicPlace?
     
     //It declares the pin point in the map
     var pinAnnotation: MKPointAnnotation? = nil
     
-    override public func viewDidLoad() {
+    //It allows to reload all the map pins
+    var reloadMapStatus:Bool=false
+    
+    override public func viewDidLoad()
+    {
         super.viewDidLoad()
         mapView.delegate = self
+        setInitialPoint(CLLocation(latitude: -2.0023, longitude: -79.234))
+        
+        //If there are pins in the map then show them
+        if let touristicPlaces = loadAllTouristicPlaces() {
+            showTouristicPlaces(touristicPlaces)
+        }
+        
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        print("Se quiere recargar el mapa="+String(reloadMapStatus))
+        if (reloadMapStatus)
+        {
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            
+            print("Se refresca el mapa")
+            
+            //If there are pins in the map then show them
+            if let touristicPlaces = loadAllTouristicPlaces() {
+                showTouristicPlaces(touristicPlaces)
+            }
+        }
+    }
     
     //It opens the TPRegisterViewController where the touristic place is registered(NEW)
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -30,8 +65,19 @@ public class MainMapViewController : UIViewController, MKMapViewDelegate
                 return
             }
             let controller = segue.destination as! TPRegisterViewController
-            controller.tpLatitudeReceived  = String(format: "%.6f",pin.coordinate.latitude)
-            controller.tpLongitudeReceived = String(format: "%.6f",pin.coordinate.longitude)
+            controller.delegate = self
+            controller.title = viewControllerTitleForTransactionMode
+            controller.tpLatitudeReceived  = String(pin.coordinate.latitude)
+            controller.tpLongitudeReceived = String(pin.coordinate.longitude)
+            controller.tpTransactionMode = transactionMode
+            controller.tpTouristicPlace = touristicPlace
+            
+            if touristicPlace != nil {
+            print("Datos tp enviados")
+            print("nombre "+(touristicPlace?.tpName!)!)
+            print("latitud "+(touristicPlace?.tpLatitude!)!)
+            print("longitud "+(touristicPlace?.tpLongitude!)!)
+            }
         }
     }
     
@@ -52,7 +98,105 @@ public class MainMapViewController : UIViewController, MKMapViewDelegate
             pinAnnotation!.coordinate = locCoord
         } else if sender.state == .ended {
             //when user end the process of hold the pin then it saves in the Pin entity and then it is saved
+            transactionMode = "INSERT"
+            viewControllerTitleForTransactionMode = "Register Touristic Place"
+            touristicPlace = nil
             performSegue(withIdentifier: "registerTPSegue", sender: pinAnnotation)
         }
     }
+    
+    //It loads all the pins that are stored in the CoreData
+    private func loadAllTouristicPlaces() -> [TouristicPlace]? {
+        var tps: [TouristicPlace]?
+        do {
+            try tps = CoreDataStack.shared().fetchAllTP(entityName: TouristicPlace.name)
+        } catch {
+            showInfo(withTitle: "Error", withMessage: "Error while fetching Pin locations: \(error)")
+        }
+        return tps
+    }
+    
+    //It shows the pins in the map after being loaded in CoreData
+    func showTouristicPlaces(_ tps: [TouristicPlace]) {
+        for tp in tps where tp.tpLatitude != nil && tp.tpLongitude != nil {
+            let annotation = MKPointAnnotation()
+            let lat = Double(tp.tpLatitude!)!
+            let lon = Double(tp.tpLongitude!)!
+            annotation.coordinate = CLLocationCoordinate2DMake(lat, lon)
+            annotation.title = tp.tpName
+            annotation.subtitle = tp.tpType
+            mapView.addAnnotation(annotation)
+        }
+        mapView.showAnnotations(mapView.annotations, animated: true)
+    }
+    
+}
+
+extension MainMapViewController {
+    
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseId = "touristicPlace"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+        var imageRender = UIImage()
+        if let tp = loadTouristicPlace(latitude: String(annotation.coordinate.latitude), longitude: String(annotation.coordinate.longitude))
+        {
+            print("Tipo a renderizar "+tp.tpType!)
+            imageRender = UIImage(named: loadImageMapName(tp.tpType!))!
+        }
+        
+        if annotationView == nil
+        {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            annotationView?.canShowCallout = true
+            annotationView?.image = imageRender
+        }
+        else
+        {
+            annotationView?.image = imageRender
+            annotationView!.annotation = annotation
+        }
+        
+        return annotationView
+    }
+    
+    public func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            self.showInfo(withMessage: "No link defined.")
+        }
+    }
+    
+    //method to show the next ViewController when the user press in a loaded pin in the map
+    public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        guard let annotation = view.annotation else {
+            return
+        }
+        let point = CGPoint(x:annotation.coordinate.latitude,y:annotation.coordinate.longitude)
+        pinAnnotation = MKPointAnnotation()
+        let locCoord = mapView.convert(point, toCoordinateFrom: mapView)
+        pinAnnotation!.coordinate = locCoord
+        transactionMode = "UPDATE"
+        viewControllerTitleForTransactionMode = "Edit Touristic Place"
+        print("Coordinates lat="+String(annotation.coordinate.latitude))
+        print("Coordinates long="+String(annotation.coordinate.longitude))
+        touristicPlace = nil
+        if let tp = loadTouristicPlace(latitude: String(annotation.coordinate.latitude),longitude: String(annotation.coordinate.longitude))
+        {
+            print("Datos tp enviados 0")
+            print("nombre "+(tp.tpName!))
+            print("latitud "+(tp.tpLatitude!))
+            print("longitud "+(tp.tpLongitude!))
+            
+            touristicPlace = tp
+        }
+        performSegue(withIdentifier: "registerTPSegue", sender: pinAnnotation)
+    }
+    
+    //method to center the initial point in the map
+    public func setInitialPoint(_ location:CLLocation)
+    {
+        let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+        mapView.setRegion(region, animated: true)
+    }
+    
 }

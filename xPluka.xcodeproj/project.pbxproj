@@ -10,6 +10,19 @@
 		B528A66E21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png in Resources */ = {isa = PBXBuildFile; fileRef = B528A66D21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png */; };
 		B528A67121C08838002B3272 /* ViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A67021C08838002B3272 /* ViewController+Helper.swift */; };
 		B528A67321C08EA2002B3272 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A67221C08EA2002B3272 /* CoreDataStack.swift */; };
+		B528A67621C32C4F002B3272 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A67521C32C4F002B3272 /* PhotoViewCell.swift */; };
+		B528A67821C32CBD002B3272 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A67721C32CBD002B3272 /* PhotoAlbumViewController.swift */; };
+		B528A67A21C32F1A002B3272 /* PhotosParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A67921C32F1A002B3272 /* PhotosParser.swift */; };
+		B528A67C21C33018002B3272 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A67B21C33018002B3272 /* Client.swift */; };
+		B528A67E21C33083002B3272 /* Client+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A67D21C33083002B3272 /* Client+Extension.swift */; };
+		B528A68021C33347002B3272 /* PhotoAlbumViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A67F21C33347002B3272 /* PhotoAlbumViewController+Extension.swift */; };
+		B528A68221C33949002B3272 /* tpStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A68121C33949002B3272 /* tpStructures.swift */; };
+		B528A68421C402C2002B3272 /* TPValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528A68321C402C2002B3272 /* TPValidations.swift */; };
+		B528A68821C46DAF002B3272 /* icon_tp_forest.png in Resources */ = {isa = PBXBuildFile; fileRef = B528A68721C46DAE002B3272 /* icon_tp_forest.png */; };
+		B528A68A21C46E09002B3272 /* icon_tp_beach.png in Resources */ = {isa = PBXBuildFile; fileRef = B528A68921C46E09002B3272 /* icon_tp_beach.png */; };
+		B528A68C21C46E30002B3272 /* icon_tp_mountain.png in Resources */ = {isa = PBXBuildFile; fileRef = B528A68B21C46E30002B3272 /* icon_tp_mountain.png */; };
+		B528A68E21C47151002B3272 /* icon_tp_lake.png in Resources */ = {isa = PBXBuildFile; fileRef = B528A68D21C47151002B3272 /* icon_tp_lake.png */; };
+		B528A69021C485A6002B3272 /* icon_tp_trash.png in Resources */ = {isa = PBXBuildFile; fileRef = B528A68F21C485A6002B3272 /* icon_tp_trash.png */; };
 		B58CF15D21B867CB00854D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF15C21B867CB00854D40 /* AppDelegate.swift */; };
 		B58CF15F21B867CB00854D40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF15E21B867CB00854D40 /* ViewController.swift */; };
 		B58CF16221B867CB00854D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58CF16021B867CB00854D40 /* Main.storyboard */; };
@@ -37,6 +50,19 @@
 		B528A66D21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_setPhotoGallery.png; sourceTree = "<group>"; };
 		B528A67021C08838002B3272 /* ViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Helper.swift"; sourceTree = "<group>"; };
 		B528A67221C08EA2002B3272 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		B528A67521C32C4F002B3272 /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
+		B528A67721C32CBD002B3272 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
+		B528A67921C32F1A002B3272 /* PhotosParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosParser.swift; sourceTree = "<group>"; };
+		B528A67B21C33018002B3272 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		B528A67D21C33083002B3272 /* Client+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+Extension.swift"; sourceTree = "<group>"; };
+		B528A67F21C33347002B3272 /* PhotoAlbumViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoAlbumViewController+Extension.swift"; sourceTree = "<group>"; };
+		B528A68121C33949002B3272 /* tpStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tpStructures.swift; sourceTree = "<group>"; };
+		B528A68321C402C2002B3272 /* TPValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPValidations.swift; sourceTree = "<group>"; };
+		B528A68721C46DAE002B3272 /* icon_tp_forest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_tp_forest.png; path = ../../../../../../../Downloads/icon_tp_forest.png; sourceTree = "<group>"; };
+		B528A68921C46E09002B3272 /* icon_tp_beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_beach.png; sourceTree = "<group>"; };
+		B528A68B21C46E30002B3272 /* icon_tp_mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_mountain.png; sourceTree = "<group>"; };
+		B528A68D21C47151002B3272 /* icon_tp_lake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_lake.png; sourceTree = "<group>"; };
+		B528A68F21C485A6002B3272 /* icon_tp_trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_trash.png; sourceTree = "<group>"; };
 		B58CF15921B867CB00854D40 /* xPluka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xPluka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58CF15C21B867CB00854D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B58CF15E21B867CB00854D40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,8 +104,20 @@
 			children = (
 				B528A67021C08838002B3272 /* ViewController+Helper.swift */,
 				B528A67221C08EA2002B3272 /* CoreDataStack.swift */,
+				B528A67B21C33018002B3272 /* Client.swift */,
+				B528A67D21C33083002B3272 /* Client+Extension.swift */,
+				B528A68121C33949002B3272 /* tpStructures.swift */,
+				B528A68321C402C2002B3272 /* TPValidations.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B528A67421C32C2B002B3272 /* CustomViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B528A67521C32C4F002B3272 /* PhotoViewCell.swift */,
+			);
+			path = CustomViewCell;
 			sourceTree = "<group>";
 		};
 		B58CF15021B867CB00854D40 = {
@@ -101,6 +139,7 @@
 		B58CF15B21B867CB00854D40 /* xPluka */ = {
 			isa = PBXGroup;
 			children = (
+				B528A67421C32C2B002B3272 /* CustomViewCell */,
 				B528A66F21C087F8002B3272 /* Helpers */,
 				B5B6243021B99A3A00588CE5 /* Icons */,
 				B5B6242D21B9971B00588CE5 /* View Controllers */,
@@ -126,6 +165,7 @@
 				B58CF17821B8748D00854D40 /* TouristicPlace.swift */,
 				B58CF17A21B8796600854D40 /* Visit.swift */,
 				B58CF17C21B87A9D00854D40 /* Visit+CoreDataProperties.swift */,
+				B528A67921C32F1A002B3272 /* PhotosParser.swift */,
 			);
 			path = "Model Entity";
 			sourceTree = "<group>";
@@ -135,6 +175,8 @@
 			children = (
 				B5B6242E21B9975B00588CE5 /* TPRegisterViewController.swift */,
 				B5B6244121BB275500588CE5 /* MainMapViewController.swift */,
+				B528A67721C32CBD002B3272 /* PhotoAlbumViewController.swift */,
+				B528A67F21C33347002B3272 /* PhotoAlbumViewController+Extension.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -142,6 +184,11 @@
 		B5B6243021B99A3A00588CE5 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				B528A68F21C485A6002B3272 /* icon_tp_trash.png */,
+				B528A68D21C47151002B3272 /* icon_tp_lake.png */,
+				B528A68B21C46E30002B3272 /* icon_tp_mountain.png */,
+				B528A68921C46E09002B3272 /* icon_tp_beach.png */,
+				B528A68721C46DAE002B3272 /* icon_tp_forest.png */,
 				B528A66D21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png */,
 				B5B6244521BB336900588CE5 /* icon_tp_setLocation2.png */,
 				B5B6244321BB31D500588CE5 /* icon_tp_setLocation.png */,
@@ -212,12 +259,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58CF16A21B867CD00854D40 /* LaunchScreen.storyboard in Resources */,
+				B528A69021C485A6002B3272 /* icon_tp_trash.png in Resources */,
 				B5B6243F21B9ADE100588CE5 /* icon_tpVisit_portrait.png in Resources */,
 				B5B6244021B9ADE100588CE5 /* icon_tpAdd_landscape.png in Resources */,
+				B528A68A21C46E09002B3272 /* icon_tp_beach.png in Resources */,
 				B5B6244421BB31D600588CE5 /* icon_tp_setLocation.png in Resources */,
+				B528A68C21C46E30002B3272 /* icon_tp_mountain.png in Resources */,
 				B58CF16721B867CD00854D40 /* Assets.xcassets in Resources */,
 				B5B6244621BB336900588CE5 /* icon_tp_setLocation2.png in Resources */,
+				B528A68E21C47151002B3272 /* icon_tp_lake.png in Resources */,
 				B58CF16221B867CB00854D40 /* Main.storyboard in Resources */,
+				B528A68821C46DAF002B3272 /* icon_tp_forest.png in Resources */,
 				B5B6243D21B9ADE100588CE5 /* icon_tpAdd_portrait.png in Resources */,
 				B5B6243E21B9ADE100588CE5 /* icon_tpVisit_landscape.png in Resources */,
 				B528A66E21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png in Resources */,
@@ -233,13 +285,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5B6242F21B9975B00588CE5 /* TPRegisterViewController.swift in Sources */,
+				B528A67621C32C4F002B3272 /* PhotoViewCell.swift in Sources */,
 				B58CF17721B8745F00854D40 /* TouristicPlace+CoreDataProperties.swift in Sources */,
+				B528A68421C402C2002B3272 /* TPValidations.swift in Sources */,
 				B58CF16521B867CB00854D40 /* xPluka.xcdatamodeld in Sources */,
+				B528A68021C33347002B3272 /* PhotoAlbumViewController+Extension.swift in Sources */,
+				B528A68221C33949002B3272 /* tpStructures.swift in Sources */,
 				B58CF17921B8748D00854D40 /* TouristicPlace.swift in Sources */,
 				B58CF15F21B867CB00854D40 /* ViewController.swift in Sources */,
 				B58CF17D21B87A9D00854D40 /* Visit+CoreDataProperties.swift in Sources */,
+				B528A67A21C32F1A002B3272 /* PhotosParser.swift in Sources */,
+				B528A67E21C33083002B3272 /* Client+Extension.swift in Sources */,
 				B528A67321C08EA2002B3272 /* CoreDataStack.swift in Sources */,
+				B528A67821C32CBD002B3272 /* PhotoAlbumViewController.swift in Sources */,
 				B58CF17321B8700500854D40 /* Photo+CoreDataProperties.swift in Sources */,
+				B528A67C21C33018002B3272 /* Client.swift in Sources */,
 				B58CF17B21B8796600854D40 /* Visit.swift in Sources */,
 				B528A67121C08838002B3272 /* ViewController+Helper.swift in Sources */,
 				B58CF15D21B867CB00854D40 /* AppDelegate.swift in Sources */,

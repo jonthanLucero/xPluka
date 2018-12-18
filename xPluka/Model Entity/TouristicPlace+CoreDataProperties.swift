@@ -24,4 +24,21 @@ extension TouristicPlace
     @NSManaged public var tpLongitude: String?
     @NSManaged public var tpQualification: String?
     @NSManaged public var tpCommentary: String?
+    @NSManaged public var photos:NSSet?
+}
+
+extension TouristicPlace
+{
+    //it declares the methods to work with the Pin
+    @objc(addPhotosObject:)
+    @NSManaged public func addToPhotos(_ value: Photo)
+    
+    @objc(removePhotosObject:)
+    @NSManaged public func removeFromPhotos(_ value: Photo)
+    
+    @objc(addPhotos:)
+    @NSManaged public func addToPhotos(_ values: NSSet)
+    
+    @objc(removePhotos:)
+    @NSManaged public func removeFromPhotos(_ values: NSSet)
 }

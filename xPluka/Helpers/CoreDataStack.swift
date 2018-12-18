@@ -7,6 +7,32 @@
 //
 
 import CoreData
+import UIKit
+
+/*class CoreDataStack
+{
+    let persistentContainer:NSPersistentContainer
+    var viewContext: NSManagedObjectContext
+    {
+        return persistentContainer.viewContext
+    }
+    
+    init(modelName: String)
+    {
+        persistentContainer = NSPersistentContainer(name: modelName)
+    }
+    
+    func load(completion: (() -> Void)? = nil)
+    {
+        persistentContainer.loadPersistentStores { storeDescription, error in
+            guard error == nil else
+            {
+                fatalError(error!.localizedDescription)
+            }
+            completion?()
+        }
+    }
+}*/
 
 struct CoreDataStack{
     
@@ -152,4 +178,50 @@ extension CoreDataStack {
         }
         return tp
     }
+    
+    //It searches for the photos related to the selected pin
+    func fetchPhotos(_ predicate: NSPredicate? = nil, entityName: String, sorting: NSSortDescriptor? = nil) throws -> [Photo]? {
+        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fr.predicate = predicate
+        if let sorting = sorting {
+            fr.sortDescriptors = [sorting]
+        }
+        guard let photos = try context.fetch(fr) as? [Photo] else {
+            return nil
+        }
+        return photos
+    }
+    
+    //It locates all the pins which are going to be shown in the map
+    func fetchAllTP( entityName: String) throws -> [TouristicPlace]? {
+        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        guard let tps = try context.fetch(fr) as? [TouristicPlace] else {
+            return nil
+        }
+        return tps
+    }
+    
+    /*//It deletes the Touristic Place according to the fetchRequest
+    func deleteTouristicPlace(_ name: String,_ latitude: String,_ longitude: String)
+    {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let tp: TouristicPlace
+        let predicate = NSPredicate(format:"tpName == %@ AND tpLatitude == %@ AND tpLongitude == %@",name,latitude,longitude)
+        do {
+            try tp = fetchTP(predicate, entityName: TouristicPlace.name)!
+            CoreDataStack.shared().context.delete(tp)
+            do {
+                try save()
+            }
+            catch{
+                print("Error")
+            }
+        }
+        catch{
+            print("Error")
+        }
+    }*/
+    
 }
+
