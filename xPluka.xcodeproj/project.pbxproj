@@ -27,7 +27,6 @@
 		B58CF16221B867CB00854D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58CF16021B867CB00854D40 /* Main.storyboard */; };
 		B58CF16521B867CB00854D40 /* xPluka.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B58CF16321B867CB00854D40 /* xPluka.xcdatamodeld */; };
 		B58CF16721B867CD00854D40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58CF16621B867CD00854D40 /* Assets.xcassets */; };
-		B58CF16A21B867CD00854D40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58CF16821B867CD00854D40 /* LaunchScreen.storyboard */; };
 		B58CF17321B8700500854D40 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF17221B8700500854D40 /* Photo+CoreDataProperties.swift */; };
 		B58CF17521B871EE00854D40 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF17421B871EE00854D40 /* Photo.swift */; };
 		B58CF17721B8745F00854D40 /* TouristicPlace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF17621B8745F00854D40 /* TouristicPlace+CoreDataProperties.swift */; };
@@ -43,6 +42,7 @@
 		B5B6244221BB275500588CE5 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6244121BB275500588CE5 /* MainMapViewController.swift */; };
 		B5B6244421BB31D600588CE5 /* icon_tp_setLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B6244321BB31D500588CE5 /* icon_tp_setLocation.png */; };
 		B5B6244621BB336900588CE5 /* icon_tp_setLocation2.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B6244521BB336900588CE5 /* icon_tp_setLocation2.png */; };
+		B5C8AD5921CC51150099C764 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C8AD5821CC51150099C764 /* Launch Screen.storyboard */; };
 		B5F7DB2721C960D700374070 /* VisitsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7DB2621C960D700374070 /* VisitsListViewController.swift */; };
 		B5F7DB2921C964FD00374070 /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7DB2821C964FD00374070 /* VisitTableViewCell.swift */; };
 		B5F7DB2D21C9723400374070 /* VisitRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7DB2C21C9723400374070 /* VisitRegisterViewController.swift */; };
@@ -72,7 +72,6 @@
 		B58CF16121B867CB00854D40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B58CF16421B867CB00854D40 /* xPluka.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = xPluka.xcdatamodel; sourceTree = "<group>"; };
 		B58CF16621B867CD00854D40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B58CF16921B867CD00854D40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B58CF16B21B867CD00854D40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B58CF17221B8700500854D40 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B58CF17421B871EE00854D40 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		B5B6244121BB275500588CE5 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		B5B6244321BB31D500588CE5 /* icon_tp_setLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_setLocation.png; sourceTree = "<group>"; };
 		B5B6244521BB336900588CE5 /* icon_tp_setLocation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_setLocation2.png; sourceTree = "<group>"; };
+		B5C8AD5821CC51150099C764 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B5F7DB2621C960D700374070 /* VisitsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsListViewController.swift; sourceTree = "<group>"; };
 		B5F7DB2821C964FD00374070 /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
 		B5F7DB2C21C9723400374070 /* VisitRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitRegisterViewController.swift; sourceTree = "<group>"; };
@@ -156,8 +156,8 @@
 				B58CF15C21B867CB00854D40 /* AppDelegate.swift */,
 				B58CF16021B867CB00854D40 /* Main.storyboard */,
 				B58CF16621B867CD00854D40 /* Assets.xcassets */,
+				B5C8AD5821CC51150099C764 /* Launch Screen.storyboard */,
 				B58CF18221B8A51D00854D40 /* xpluka_logo.png */,
-				B58CF16821B867CD00854D40 /* LaunchScreen.storyboard */,
 				B58CF16B21B867CD00854D40 /* Info.plist */,
 				B58CF16321B867CB00854D40 /* xPluka.xcdatamodeld */,
 			);
@@ -270,7 +270,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B58CF16A21B867CD00854D40 /* LaunchScreen.storyboard in Resources */,
 				B528A69021C485A6002B3272 /* icon_tp_trash.png in Resources */,
 				B5B6243F21B9ADE100588CE5 /* icon_tpVisit_portrait.png in Resources */,
 				B5B6244021B9ADE100588CE5 /* icon_tpAdd_landscape.png in Resources */,
@@ -283,6 +282,7 @@
 				B528A68E21C47151002B3272 /* icon_tp_lake.png in Resources */,
 				B58CF16221B867CB00854D40 /* Main.storyboard in Resources */,
 				B528A68821C46DAF002B3272 /* icon_tp_forest.png in Resources */,
+				B5C8AD5921CC51150099C764 /* Launch Screen.storyboard in Resources */,
 				B5B6243D21B9ADE100588CE5 /* icon_tpAdd_portrait.png in Resources */,
 				B5B6243E21B9ADE100588CE5 /* icon_tpVisit_landscape.png in Resources */,
 				B528A66E21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png in Resources */,
@@ -333,14 +333,6 @@
 				B58CF16121B867CB00854D40 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B58CF16821B867CD00854D40 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B58CF16921B867CD00854D40 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

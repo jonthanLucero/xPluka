@@ -41,7 +41,18 @@ class VisitRegisterViewController: UIViewController
         pickerView.dataSource = self
         
         configureDateTimePickers()
-        configureTouristicPlacePicker()
+        
+        fetchData()
+        if(touristicPlaces.count > 0)
+        {
+            configureTouristicPlacePicker()
+        }
+        else
+        {
+            touristicPlace.text = "No Touristic Place available."
+            touristicPlace.isEnabled = false
+            saveUpdateVisit.isEnabled = false
+        }
         
         if (visitTransactionMode == "INSERT")
         {
@@ -243,6 +254,9 @@ class VisitRegisterViewController: UIViewController
         {
             print("Conteo de tps=\(String(describing: tps?.count))")
             touristicPlaces = tps!
+        }else{
+            let tp:TouristicPlace = TouristicPlace(tpId: "999", name: "Tourist Place not available", description: "", type: "", latitude: "", longitude: "", qualification: "", commentary: "", context: CoreDataStack.shared().context)
+            touristicPlaces.append(tp)
         }
     }
 }
