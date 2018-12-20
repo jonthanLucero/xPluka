@@ -17,6 +17,7 @@ extension TouristicPlace
     }
     
     //It declares the entity TouristicPlace properties
+    @NSManaged public var tpId:String?
     @NSManaged public var tpName: String?
     @NSManaged public var tpDescription: String?
     @NSManaged public var tpType: String?
@@ -24,12 +25,16 @@ extension TouristicPlace
     @NSManaged public var tpLongitude: String?
     @NSManaged public var tpQualification: String?
     @NSManaged public var tpCommentary: String?
+    @NSManaged public var tpCreationDate: Date?
+    @NSManaged public var tpModificationDate: Date?
     @NSManaged public var photos:NSSet?
+    @NSManaged public var visits:NSSet?
+    
 }
 
 extension TouristicPlace
 {
-    //it declares the methods to work with the Pin
+    //it declares the methods to work with the Touristic Place
     @objc(addPhotosObject:)
     @NSManaged public func addToPhotos(_ value: Photo)
     

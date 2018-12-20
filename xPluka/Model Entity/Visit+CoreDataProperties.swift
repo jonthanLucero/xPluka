@@ -17,9 +17,11 @@ extension Visit
     }
     
     //It declares the entity Visit properties
-    @NSManaged public var vPlannificationDate : String?
-    @NSManaged public var vBeginHour: String?
-    @NSManaged public var vEndHour: String?
+    @NSManaged public var vId:String
+    @NSManaged public var vPlannificationDateBegin : Date?
+    @NSManaged public var vPlannificationDateEnd : Date?
     @NSManaged public var vCommentary: String?
-    @NSManaged public var vtouristicPlace: TouristicPlace?
+    @NSManaged public var touristiPlaceVisit: TouristicPlace?
+    @NSManaged public var vCreationDate: Date?
+    @NSManaged public var vModificationDate: Date?
 }

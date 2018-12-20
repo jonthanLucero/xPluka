@@ -27,6 +27,7 @@ public class TPRegisterViewController: UIViewController
     @IBOutlet weak var tpObservations: UITextField!
     @IBOutlet weak var tpShowGallery: UIButton!
     @IBOutlet weak var tpDeleteTP: UIButton!
+    @IBOutlet weak var TPSaveChanges: UIButton!
     
     var delegate:TPRegisterViewControllerPassDataBackward?
 
@@ -35,11 +36,17 @@ public class TPRegisterViewController: UIViewController
     var tpTransactionMode:String=""
     var tpNameLoaded:String=""
     var tpTouristicPlace:TouristicPlace? = nil
-    var deleteStatus:String = ""
+    var pickerView = UIPickerView()
+    
+    //List of types
+    let tpTypes = ["FOREST","LAKE","BEACH","MOUNTAIN"]
+    var selectedtpType:String?
     
     public override func viewDidLoad()
     {
         super.viewDidLoad()
+        createtpTypePickerView()
+        
         tpLatitude.text = tpLatitudeReceived
         tpLongitude.text = tpLongitudeReceived
         
@@ -66,6 +73,7 @@ public class TPRegisterViewController: UIViewController
             tpLongitude.text = tpTouristicPlace?.tpLongitude
             tpQualification.text = tpTouristicPlace?.tpQualification
             tpObservations.text =  tpTouristicPlace?.tpCommentary
+            TPSaveChanges.setTitle("Update", for: .normal)
         }
     }
 
@@ -103,7 +111,10 @@ public class TPRegisterViewController: UIViewController
                 {
                     if (tpTransactionMode == "INSERT")
                     {
-                        _ = TouristicPlace(name: tpName.text!, description: tpDescription.text!, type: tpType.text!, latitude: tpLatitude.text!, longitude: tpLongitude.text!, qualification: tpQualification.text!, commentary: tpObservations.text!, context: CoreDataStack.shared().context)
+                        let lastTouristicPlaceIdString = CoreDataStack.shared().getLastTouristicPlaceId()
+                        let nextTouristicPlaceId = Int(lastTouristicPlaceIdString)! + 1
+                        let nextTouristicPlaceIdString = String(nextTouristicPlaceId)
+                        _ = TouristicPlace(tpId: nextTouristicPlaceIdString, name: tpName.text!, description: tpDescription.text!, type: tpType.text!, latitude: tpLatitude.text!, longitude: tpLongitude.text!, qualification: tpQualification.text!, commentary: tpObservations.text!, context: CoreDataStack.shared().context)
                         save()
                         if(validateTPInsertData(tpName.text!, tpLatitude.text!, tpLongitude.text!))
                         {
@@ -118,7 +129,7 @@ public class TPRegisterViewController: UIViewController
                     {
                         if(tpTransactionMode == "UPDATE")
                         {
-                            if let tp = loadTouristicPlace(latitude: tpLatitude.text!, longitude: tpLongitude.text!)
+                            if let tp = loadTouristicPlaceById(tpId: (tpTouristicPlace?.tpId!)!)
                             {
                                 tp.setValue(tpName.text!, forKeyPath: "tpName")
                                 tp.setValue(tpDescription.text!, forKeyPath: "tpDescription")
@@ -127,6 +138,7 @@ public class TPRegisterViewController: UIViewController
                                 tp.setValue(tpLongitude.text!, forKeyPath: "tpLongitude")
                                 tp.setValue(tpQualification.text!, forKeyPath: "tpQualification")
                                 tp.setValue(tpObservations.text!, forKeyPath: "tpCommentary")
+                                tp.setValue(NSDate() as Date, forKey: "tpModificationDate")
                                 save()
                                 showInfoDismissViewController(withTitle: "Info", withMessage: "Data has been updated correctly.")
                             }
@@ -139,7 +151,6 @@ public class TPRegisterViewController: UIViewController
     
     
     @IBAction func tpDeleteTPChanges(_ sender: Any) {
-        deleteStatus = "YES"
         showInfoDeleteDismissViewController(withMessage: "Do you wish to delete this Touristic Place")
     }
     
@@ -162,11 +173,8 @@ public class TPRegisterViewController: UIViewController
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhotoGallerySegue"
         {
-            guard let tp = sender as? TouristicPlace else {
-                return
-            }
             let controller = segue.destination as! PhotoAlbumViewController
-            controller.tp  = tp
+            controller.touristicPlace = tpTouristicPlace
         }
     }
     
@@ -217,6 +225,33 @@ public class TPRegisterViewController: UIViewController
                 ac.addAction(OKAction)
                 self.present(ac, animated: true,completion: nil)
         }
+    }
+    
+    func createtpTypePickerView()
+    {
+        let tpTypePicker = UIPickerView()
+        tpTypePicker.delegate = self
+        tpType.inputView = tpTypePicker
+    }
+}
+
+extension TPRegisterViewController:UIPickerViewDelegate,UIPickerViewDataSource
+{
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return tpTypes.count
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return tpTypes[row]
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedtpType = tpTypes[row]
+        tpType.text = selectedtpType
     }
     
 }

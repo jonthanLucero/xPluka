@@ -18,7 +18,7 @@ extension Photo {
     //It declares the entity Photo properties
     @NSManaged public var image: NSData?
     @NSManaged public var title: String?
-    @NSManaged public var imageUrl: String?
-    @NSManaged public var touristicPlace: TouristicPlace?
+    @NSManaged public var urlImage: String?
+    @NSManaged public var touristicPlacePhoto: TouristicPlace?
     
 }

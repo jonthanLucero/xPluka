@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 extension UIViewController
 {
@@ -43,7 +44,7 @@ extension UIViewController
         }
     }
     
-    //It loads the pin that is going to be shown in the map
+    //It loads the Touristic Place that is going to be shown in the map
     public func loadTouristicPlace(latitude: String, longitude: String) -> TouristicPlace? {
         let predicate = NSPredicate(format: "tpLatitude == %@ AND tpLongitude == %@", latitude, longitude)
         var tp: TouristicPlace?
@@ -53,6 +54,30 @@ extension UIViewController
             showInfo(withTitle: "Error", withMessage: "Error while fetching location: \(error)")
         }
         return tp
+    }
+    
+    //It loads the Touristic Place by tpId
+    public func loadTouristicPlaceById(tpId: String) -> TouristicPlace? {
+        let predicate = NSPredicate(format: "tpId == %@ ", tpId)
+        var tp: TouristicPlace?
+        do {
+            try tp = CoreDataStack.shared().fetchTP(predicate, entityName: TouristicPlace.name)
+        } catch {
+            showInfo(withTitle: "Error", withMessage: "Error while fetching location: \(error)")
+        }
+        return tp
+    }
+    
+    //It loads the Visit by vId
+    public func loadVisitById(vId: String) -> Visit? {
+        let predicate = NSPredicate(format: "vId == %@ ", vId)
+        var vs: Visit?
+        do {
+            try vs = CoreDataStack.shared().fetchVisit(predicate, entityName: Visit.name)
+        } catch {
+            showInfo(withTitle: "Error", withMessage: "Error while fetching location: \(error)")
+        }
+        return vs
     }
     
     //Allows to dismiss the keyboard when taps out of the textfield
@@ -86,5 +111,25 @@ extension UIViewController
         }
         print(imageMapName)
         return imageMapName
+    }
+    
+    func convertDateTimeToString(_ date: Date,_ format: String) -> String
+    {
+        var dateTimeString:String = ""
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        dateTimeString = dateFormatter.string(from: date)
+        return dateTimeString
+    }
+    
+    func convertStringToDateTime(_ date: String,_ time: String) -> Date
+    {
+        let dateFormat = "yyyy/MM/dd HH:mm:ss"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        let stringDateTime = date+" "+time
+        let stringConvertedToDateTime = dateFormatter.date(from:stringDateTime)
+        return stringConvertedToDateTime!
     }
 }

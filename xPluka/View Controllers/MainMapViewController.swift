@@ -106,7 +106,7 @@ public class MainMapViewController : UIViewController, MKMapViewDelegate,TPRegis
     }
     
     //It loads all the pins that are stored in the CoreData
-    private func loadAllTouristicPlaces() -> [TouristicPlace]? {
+    public func loadAllTouristicPlaces() -> [TouristicPlace]? {
         var tps: [TouristicPlace]?
         do {
             try tps = CoreDataStack.shared().fetchAllTP(entityName: TouristicPlace.name)
@@ -197,6 +197,17 @@ extension MainMapViewController {
     {
         let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
         mapView.setRegion(region, animated: true)
+    }
+    
+    //It loads all the pins that are stored in the CoreData
+    private func loadAllVisits() -> [Visit]? {
+        var vs: [Visit]?
+        do {
+            try vs = CoreDataStack.shared().fetchAllVisits(entityName: Visit.name)
+        } catch {
+            showInfo(withTitle: "Error", withMessage: "Error while fetching Visits: \(error)")
+        }
+        return vs
     }
     
 }

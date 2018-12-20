@@ -4,29 +4,34 @@
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="urlImage" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="touristicPlace" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TouristicPlace" inverseName="photos" inverseEntity="TouristicPlace" syncable="YES"/>
+        <relationship name="touristicPlacePhoto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TouristicPlace" inverseName="photos" inverseEntity="TouristicPlace" syncable="YES"/>
     </entity>
     <entity name="TouristicPlace" representedClassName="TouristicPlace" syncable="YES">
         <attribute name="tpCommentary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tpCreationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="tpDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tpId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tpLatitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tpLongitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tpModificationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="tpName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tpQualification" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tpType" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="photos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="touristicPlace" inverseEntity="Photo" syncable="YES"/>
-        <relationship name="visitas" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Visit" inverseName="touristiPlaceVisit" inverseEntity="Visit" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Photo" inverseName="touristicPlacePhoto" inverseEntity="Photo" syncable="YES"/>
+        <relationship name="visitas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Visit" inverseName="touristiPlaceVisit" inverseEntity="Visit" syncable="YES"/>
     </entity>
     <entity name="Visit" representedClassName="Visit" syncable="YES">
-        <attribute name="beginHour" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="commentary" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="endHour" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="plannficationDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vCommentary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vCreationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="vId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vModificationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="vPlannificationDateBegin" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="vPlannificationDateEnd" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="touristiPlaceVisit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TouristicPlace" inverseName="visitas" inverseEntity="TouristicPlace" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TouristicPlace" positionX="-110" positionY="-513" width="128" height="178"/>
-        <element name="Photo" positionX="124" positionY="-184" width="128" height="103"/>
-        <element name="Visit" positionX="-4806" positionY="-234" width="128" height="118"/>
+        <element name="Photo" positionX="-11" positionY="-355" width="128" height="103"/>
+        <element name="TouristicPlace" positionX="-200" positionY="-502" width="128" height="223"/>
+        <element name="Visit" positionX="-405" positionY="-369" width="128" height="148"/>
     </elements>
 </model>

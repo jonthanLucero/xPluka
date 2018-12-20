@@ -9,31 +9,6 @@
 import CoreData
 import UIKit
 
-/*class CoreDataStack
-{
-    let persistentContainer:NSPersistentContainer
-    var viewContext: NSManagedObjectContext
-    {
-        return persistentContainer.viewContext
-    }
-    
-    init(modelName: String)
-    {
-        persistentContainer = NSPersistentContainer(name: modelName)
-    }
-    
-    func load(completion: (() -> Void)? = nil)
-    {
-        persistentContainer.loadPersistentStores { storeDescription, error in
-            guard error == nil else
-            {
-                fatalError(error!.localizedDescription)
-            }
-            completion?()
-        }
-    }
-}*/
-
 struct CoreDataStack{
     
     private let model: NSManagedObjectModel
@@ -201,27 +176,69 @@ extension CoreDataStack {
         return tps
     }
     
-    /*//It deletes the Touristic Place according to the fetchRequest
-    func deleteTouristicPlace(_ name: String,_ latitude: String,_ longitude: String)
+    //It checks if the touristic place was saved
+    func fetchVisit(_ predicate: NSPredicate, entityName: String) throws -> Visit?
     {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let tp: TouristicPlace
-        let predicate = NSPredicate(format:"tpName == %@ AND tpLatitude == %@ AND tpLongitude == %@",name,latitude,longitude)
+        let ft = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        ft.predicate = predicate
+        guard let vs = (try context.fetch(ft) as! [Visit]).first else
+        {
+            return nil
+        }
+        return vs
+    }
+    
+    func fetchAllVisits(entityName: String) throws -> [Visit]?{
+        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        guard let vs = try context.fetch(fr) as? [Visit] else{
+            return nil
+        }
+        return vs
+    }
+    
+    func getLastTouristicPlaceId() -> String
+    {
+        var touristicPlaceId:String = ""
+        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "TouristicPlace")
+        fr.sortDescriptors = [NSSortDescriptor(key: "tpCreationDate", ascending: false)]
+        var tp: TouristicPlace?
         do {
-            try tp = fetchTP(predicate, entityName: TouristicPlace.name)!
-            CoreDataStack.shared().context.delete(tp)
-            do {
-                try save()
-            }
-            catch{
-                print("Error")
-            }
+            try tp = (try context.fetch(fr) as! [TouristicPlace]).first
+        } catch {
+            
         }
-        catch{
-            print("Error")
+        if(tp == nil)
+        {
+            touristicPlaceId = "0"
         }
-    }*/
+        else
+        {
+            touristicPlaceId = (tp?.tpId)!
+        }
+        return touristicPlaceId
+    }
+    
+    func getLastVisitId() -> String
+    {
+        var visitId:String = ""
+        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Visit")
+        fr.sortDescriptors = [NSSortDescriptor(key: "vCreationDate", ascending: false)]
+        var vs: Visit?
+        do {
+            try vs = (try context.fetch(fr) as! [Visit]).first
+        } catch {
+            
+        }
+        if(vs  == nil)
+        {
+            visitId = "0"
+        }
+        else
+        {
+            visitId = (vs?.vId)!
+        }
+        return visitId
+    }
     
 }
 

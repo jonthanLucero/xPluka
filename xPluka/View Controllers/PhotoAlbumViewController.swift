@@ -28,28 +28,31 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
     var totalPages: Int? = nil
     
     var presentingAlert = false
-    var tp: TouristicPlace?
+    var touristicPlace: TouristicPlace?
     var fetchedResultsController : NSFetchedResultsController<Photo>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //it loads the default layout
         updateFlowLayout(view.frame.size)
+        mapView.delegate = self
+        //MapView zoom and scroll is enabled
+        mapView.isZoomEnabled = false
+        mapView.isScrollEnabled = false
+        
         //It loads by default status empty
         updateStatusLabel("")
         
-        guard let tp = tp else {
-            return
-        }
-        //It loads the information of the gallery set up in that gallery
-        print("PhotoAlbumViewController viewDidLoad")
-        setupFetchedResultControllerWith(tp)
+        
+        //It shows the pin location of the selected Touristic Place
+        showOnTheMap(touristicPlace!)
+        //It loads the information of the gallery set up in that pin
+        setupFetchedResultControllerWith(touristicPlace!)
         
         //If there are no photos in that location, then it starts to search and download a photo gallery
-        if let photos = tp.photos, photos.count == 0 {
+        if let photos = touristicPlace?.photos, photos.count == 0 {
             // pin selected has no photos
-            print("fetchPhotosFromAPI")
-            fetchPhotosFromAPI(tp)
+            fetchPhotosFromAPI(touristicPlace!)
         }
     }
     
@@ -59,25 +62,24 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
     
     //It deletes all photos from CoreData when user press new Gallery
     @IBAction func deleteAction(_ sender: Any) {
-        print("deleteAction")
         // delete all photos
         for photos in fetchedResultsController.fetchedObjects! {
             CoreDataStack.shared().context.delete(photos)
         }
         save()
-        fetchPhotosFromAPI(tp!)
+        fetchPhotosFromAPI(touristicPlace!)
     }
     
     private func setupFetchedResultControllerWith(_ tp: TouristicPlace) {
-        print("setupFetchedResultControllerWith")
+        
         let fr = NSFetchRequest<Photo>(entityName: Photo.name)
         fr.sortDescriptors = []
         //it loads the request to delete all the photos related to that pin
-        fr.predicate = NSPredicate(format: "touristicPlace == %@", argumentArray: [tp])
+        fr.predicate = NSPredicate(format: "touristicPlacePhoto == %@", argumentArray: [tp])
         
         //It creates the fetchResultController
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: CoreDataStack.shared().context, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultsController.delegate = (self as NSFetchedResultsControllerDelegate)
+        fetchedResultsController.delegate = self
         
         // It starts looking for the photos related to that pin
         var error: NSError?
@@ -141,17 +143,32 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
         for photo in photos {
             performUIUpdatesOnMain {
                 if let url = photo.url {
-                    _ = Photo(title: photo.title, imageUrl: url,touristicPlace: forTP, context: CoreDataStack.shared().context)
-                    //_ = Photo(title: photo.title, imageUrl: url, forPin: forPin, context: CoreDataStack.shared().context)
+                    _ = Photo(touristicPlace: forTP, title: photo.title, imageUrl: url, context: CoreDataStack.shared().context)
                     self.save()
                 }
             }
         }
     }
     
+    //It shows the pin location in the map
+    private func showOnTheMap(_ tp: TouristicPlace) {
+        
+        let lat = Double(tp.tpLatitude!)!
+        let lon = Double(tp.tpLongitude!)!
+        let locCoord = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = locCoord
+        
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotation(annotation)
+        mapView.setCenter(locCoord, animated: true)
+    }
+    
+    
     //it loads the photos from the CoreData
     private func loadPhotos(using tp: TouristicPlace) -> [Photo]? {
-        let predicate = NSPredicate(format: "touristicPlace == %@", argumentArray: [tp])
+        let predicate = NSPredicate(format: "touristicPlacePhoto == %@", argumentArray: [tp])
         var photos: [Photo]?
         do {
             try photos = CoreDataStack.shared().fetchPhotos(predicate, entityName: Photo.name)
@@ -184,5 +201,25 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
         } else {
             button.setTitle("New Collection", for: .normal)
         }
+    }
+}
+
+extension PhotoAlbumViewController {
+    //Method to show the behaviour in the map (red color, animated)
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let reuseId = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = false
+            pinView!.pinTintColor = .red
+        } else {
+            pinView!.annotation = annotation
+        }
+        
+        return pinView
     }
 }

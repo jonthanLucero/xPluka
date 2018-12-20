@@ -24,7 +24,6 @@
 		B528A68E21C47151002B3272 /* icon_tp_lake.png in Resources */ = {isa = PBXBuildFile; fileRef = B528A68D21C47151002B3272 /* icon_tp_lake.png */; };
 		B528A69021C485A6002B3272 /* icon_tp_trash.png in Resources */ = {isa = PBXBuildFile; fileRef = B528A68F21C485A6002B3272 /* icon_tp_trash.png */; };
 		B58CF15D21B867CB00854D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF15C21B867CB00854D40 /* AppDelegate.swift */; };
-		B58CF15F21B867CB00854D40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CF15E21B867CB00854D40 /* ViewController.swift */; };
 		B58CF16221B867CB00854D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58CF16021B867CB00854D40 /* Main.storyboard */; };
 		B58CF16521B867CB00854D40 /* xPluka.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B58CF16321B867CB00854D40 /* xPluka.xcdatamodeld */; };
 		B58CF16721B867CD00854D40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58CF16621B867CD00854D40 /* Assets.xcassets */; };
@@ -44,6 +43,9 @@
 		B5B6244221BB275500588CE5 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B6244121BB275500588CE5 /* MainMapViewController.swift */; };
 		B5B6244421BB31D600588CE5 /* icon_tp_setLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B6244321BB31D500588CE5 /* icon_tp_setLocation.png */; };
 		B5B6244621BB336900588CE5 /* icon_tp_setLocation2.png in Resources */ = {isa = PBXBuildFile; fileRef = B5B6244521BB336900588CE5 /* icon_tp_setLocation2.png */; };
+		B5F7DB2721C960D700374070 /* VisitsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7DB2621C960D700374070 /* VisitsListViewController.swift */; };
+		B5F7DB2921C964FD00374070 /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7DB2821C964FD00374070 /* VisitTableViewCell.swift */; };
+		B5F7DB2D21C9723400374070 /* VisitRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7DB2C21C9723400374070 /* VisitRegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +67,6 @@
 		B528A68F21C485A6002B3272 /* icon_tp_trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_trash.png; sourceTree = "<group>"; };
 		B58CF15921B867CB00854D40 /* xPluka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xPluka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58CF15C21B867CB00854D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B58CF15E21B867CB00854D40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B58CF16121B867CB00854D40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B58CF16421B867CB00854D40 /* xPluka.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = xPluka.xcdatamodel; sourceTree = "<group>"; };
 		B58CF16621B867CD00854D40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +87,9 @@
 		B5B6244121BB275500588CE5 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
 		B5B6244321BB31D500588CE5 /* icon_tp_setLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_setLocation.png; sourceTree = "<group>"; };
 		B5B6244521BB336900588CE5 /* icon_tp_setLocation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_setLocation2.png; sourceTree = "<group>"; };
+		B5F7DB2621C960D700374070 /* VisitsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsListViewController.swift; sourceTree = "<group>"; };
+		B5F7DB2821C964FD00374070 /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
+		B5F7DB2C21C9723400374070 /* VisitRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitRegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B528A67521C32C4F002B3272 /* PhotoViewCell.swift */,
+				B5F7DB2821C964FD00374070 /* VisitTableViewCell.swift */,
 			);
 			path = CustomViewCell;
 			sourceTree = "<group>";
@@ -145,7 +150,6 @@
 				B5B6242D21B9971B00588CE5 /* View Controllers */,
 				B58CF17121B86FC600854D40 /* Model Entity */,
 				B58CF15C21B867CB00854D40 /* AppDelegate.swift */,
-				B58CF15E21B867CB00854D40 /* ViewController.swift */,
 				B58CF16021B867CB00854D40 /* Main.storyboard */,
 				B58CF16621B867CD00854D40 /* Assets.xcassets */,
 				B58CF18221B8A51D00854D40 /* xpluka_logo.png */,
@@ -177,6 +181,8 @@
 				B5B6244121BB275500588CE5 /* MainMapViewController.swift */,
 				B528A67721C32CBD002B3272 /* PhotoAlbumViewController.swift */,
 				B528A67F21C33347002B3272 /* PhotoAlbumViewController+Extension.swift */,
+				B5F7DB2621C960D700374070 /* VisitsListViewController.swift */,
+				B5F7DB2C21C9723400374070 /* VisitRegisterViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -286,13 +292,14 @@
 			files = (
 				B5B6242F21B9975B00588CE5 /* TPRegisterViewController.swift in Sources */,
 				B528A67621C32C4F002B3272 /* PhotoViewCell.swift in Sources */,
+				B5F7DB2721C960D700374070 /* VisitsListViewController.swift in Sources */,
+				B5F7DB2921C964FD00374070 /* VisitTableViewCell.swift in Sources */,
 				B58CF17721B8745F00854D40 /* TouristicPlace+CoreDataProperties.swift in Sources */,
 				B528A68421C402C2002B3272 /* TPValidations.swift in Sources */,
 				B58CF16521B867CB00854D40 /* xPluka.xcdatamodeld in Sources */,
 				B528A68021C33347002B3272 /* PhotoAlbumViewController+Extension.swift in Sources */,
 				B528A68221C33949002B3272 /* tpStructures.swift in Sources */,
 				B58CF17921B8748D00854D40 /* TouristicPlace.swift in Sources */,
-				B58CF15F21B867CB00854D40 /* ViewController.swift in Sources */,
 				B58CF17D21B87A9D00854D40 /* Visit+CoreDataProperties.swift in Sources */,
 				B528A67A21C32F1A002B3272 /* PhotosParser.swift in Sources */,
 				B528A67E21C33083002B3272 /* Client+Extension.swift in Sources */,
@@ -303,6 +310,7 @@
 				B58CF17B21B8796600854D40 /* Visit.swift in Sources */,
 				B528A67121C08838002B3272 /* ViewController+Helper.swift in Sources */,
 				B58CF15D21B867CB00854D40 /* AppDelegate.swift in Sources */,
+				B5F7DB2D21C9723400374070 /* VisitRegisterViewController.swift in Sources */,
 				B58CF17521B871EE00854D40 /* Photo.swift in Sources */,
 				B5B6244221BB275500588CE5 /* MainMapViewController.swift in Sources */,
 			);

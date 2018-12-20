@@ -91,7 +91,7 @@ extension PhotoAlbumViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let photo = fetchedResultsController.object(at: indexPath)
         let photoViewCell = cell as! PhotoViewCell
-        photoViewCell.imageUrl = photo.imageUrl!
+        photoViewCell.imageUrl = photo.urlImage!
         configImage(using: photoViewCell, photo: photo, collectionView: collectionView, index: indexPath)
     }
     
@@ -108,7 +108,7 @@ extension PhotoAlbumViewController: UICollectionViewDataSource, UICollectionView
         }
         
         let photo = fetchedResultsController.object(at: forItemAt)
-        if let imageUrl = photo.imageUrl {
+        if let imageUrl = photo.urlImage {
             Client.shared().cancelDownload(imageUrl)
         }
     }
@@ -122,7 +122,7 @@ extension PhotoAlbumViewController: UICollectionViewDataSource, UICollectionView
             cell.imageView.image = UIImage(data: Data(referencing: imageData))
         } else {
             //If the photo needs to be downloaed then it shows an animation
-            if let imageUrl = photo.imageUrl {
+            if let imageUrl = photo.urlImage {
                 cell.activityIndicator.startAnimating()
                 Client.shared().downloadImage(imageUrl: imageUrl) { (data, error) in
                     if let _ = error {
@@ -159,5 +159,6 @@ extension PhotoAlbumViewController: UICollectionViewDataSource, UICollectionView
             })
         }
         self.presentingAlert = true
-}
+    }
+    
 }

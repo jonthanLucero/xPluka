@@ -64,7 +64,59 @@ public class TPValidations {
         return tpQualificationStatus
     }
     
+    //Validates if there are required data not filled in the Register Visit
+    public func validateVisitRegisterData(_ touristicPlaceName:String,_ startDate: String,_ startTime: String,_ endDate: String,_ endTime: String) -> String
+    {
+        var errorMessage:String = ""
+        
+        if (touristicPlaceName.isEmpty)
+        {
+            errorMessage="Touristic Place"
+        }
+        
+        if (startDate.isEmpty)
+        {
+            errorMessage+=",Start Date"
+        }
+        
+        if (startTime.isEmpty)
+        {
+            errorMessage+=",Start Time"
+        }
+        
+        if (endDate.isEmpty)
+        {
+            errorMessage+=",End Date"
+        }
+        
+        if (endTime.isEmpty)
+        {
+            errorMessage += ",End Time"
+        }
+        
+        if(!errorMessage.isEmpty)
+        {
+            errorMessage+=" required."
+        }
+        return errorMessage
+    }
     
-    
+    //Validates if was registered a correct type Of Touristic Place
+    public func validateVisitDateTime(_ startDateTime: Date, endDateTime: Date) -> String
+    {
+        var visitDateTimeStatus:String = ""
+        if(startDateTime == endDateTime)
+        {
+            visitDateTimeStatus += "Start and End DateTime must be different"
+        }
+        else
+        {
+            if(startDateTime > endDateTime)
+            {
+                visitDateTimeStatus += "End DateTime must be greater than Start DateTime"
+            }
+        }
+        return visitDateTimeStatus
+    }
     
 }
