@@ -14,15 +14,15 @@ You need to follow the next steps:<br />
 
 **Executed Example**
 
-Main Screen 
+**Main Screen **<br/>
 It shows the map where will be shown the Touristic Places.
 ![Main_Screen_Map](xpluka-map-1.png)
 
-Map instructions
+**Map instructions**<br/>
 It shows a message where you can see the features of the view.
 ![Map_instructions](xpluka-map-instructions.png)
 
-Register Touristic Place
+**Register Touristic Place**<br/>
 This view allows to create a new place with the required fields:<br/>
 * Name<br/>
 * Description<br/>
@@ -33,12 +33,12 @@ This view allows to create a new place with the required fields:<br/>
 
 ![Register_touristic_place](xpluka-register-touristic-place.png)
 
-Save Touristic Place <br/>
+**Save Touristic Place** <br/>
 After filling all the required fields then the user can press the button save changes, it shows a message where the place is created
 
 ![Register_touristic_save](xpluka-register-touristic-place-save-changes.png)
 
-Touristic Place shown in the map<br/>
+**Touristic Place shown in the map**<br/>
 After the creation of the Touristic place it shows the tp in the map. 
 
 ![map_show_touristic_places](xpluka-register-touristic-place-show-tp.png)
