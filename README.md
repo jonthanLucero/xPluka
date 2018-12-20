@@ -15,11 +15,11 @@ You need to follow the next steps:<br />
 **Executed Example**
 
 **Main Screen**<br/>
-It shows the map where will be shown the Touristic Places.
+It shows the map where will be shown the Touristic Places.<br/>
 ![Main_Screen_Map](xpluka-map-1_1.png)
 
 **Map instructions**<br/>
-It shows a message where you can see the features of the view.
+It shows a message where you can see the features of the view.<br/>
 ![Map_instructions](xpluka-map-instructions_1.png)
 
 **Register Touristic Place**<br/>
@@ -31,32 +31,32 @@ This view allows to create a new place with the required fields:<br/>
 * Qualification (validated from 1 to 10)<br/>
 * Observations (Commentary of the Touristic Place)<br/>
 
-![Register_touristic_place](xpluka-register-touristic-place_1.png)
+![Register_touristic_place](xpluka-register-touristic-place_1.png)<br/>
 
 **Save Touristic Place** <br/>
-After filling all the required fields then the user can press the button save changes, it shows a message where the place is created
+After filling all the required fields then the user can press the button save changes, it shows a message where the place is created<br/>
 
-![Register_touristic_save](xpluka-register-touristic-place-save-changes_1.png)
+![Register_touristic_save](xpluka-register-touristic-place-save-changes_1.png)<br/>
 
 **Touristic Place shown in the map**<br/>
-After the creation of the Touristic place it shows the tp in the map. 
+After the creation of the Touristic place it shows the tp in the map.<br/> 
 
-![map_show_touristic_places](xpluka-register-touristic-place-show-tp_1.png)
+![map_show_touristic_places](xpluka-register-touristic-place-show-tp_1.png)<br/>
 
 **Edit Touristic Place**<br/>
-By pressing in the created place, it shows the register TP view with the last filled information, also allows to see the image gallery by pressing in the image gallery button. 
+By pressing in the created place, it shows the register TP view with the last filled information, also allows to see the image gallery by pressing in the image gallery button.<br/>
 
-![Register_touristic_update](xpluka-register-touristic-place-update-changes_1.png)
+![Register_touristic_update](xpluka-register-touristic-place-update-changes_1.png)<br/>
 
 **Delete Touristic Place**<br/>
-You can delete the touristic place by pressing the delete button, after that it shows a message to confirm the deletion.
+You can delete the touristic place by pressing the delete button, after that it shows a message to confirm the deletion.<br/>
 
-![Register_touristic_delete](xpluka-register-touristic-place-delete_1.png)
+![Register_touristic_delete](xpluka-register-touristic-place-delete_1.png)<br/>
 
 **Show image gallery**<br/>
 By pressing the gallery button it shows the loaded photos that belongs to the touristic place, by pressing the new collection button it starts downloading new photos using the Flickr API.
 
-![Register_touristic_show_gallery](xpluka-photo-gallery_1.png)
+![Register_touristic_show_gallery](xpluka-photo-gallery_1.png)<br/>
 
 
 
