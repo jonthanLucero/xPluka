@@ -58,6 +58,15 @@ By pressing the gallery button it shows the loaded photos that belongs to the to
 
 ![Register_touristic_show_gallery](xpluka-photo-gallery_1.png)<br/>
 
+**Show Visit List**<br/>
+By pressing the visit button in the map view, then it shows a list of all the planned visits. Then you can see the plannification fate begin and end also an icon referred to its type.<br/>
+
+![Show_visit_list](xpluka-visit-list_1.png)<br/>
+
+**Add New Visit**<br/>
+By pressing the + button then it shows the information of the visit to create.<br/>
+
+![Add_new_visit](xpluka-register-visit_1.png)<br/>
 
 
 ## Built With
