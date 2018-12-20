@@ -15,8 +15,7 @@ You need to follow the next steps:<br />
 **Executed Example**
 
 Main Screen 
-It shows the map 
-
+It shows the map where will be shown the Touristic Places.
 ![Main_Screen_Map](xpluka-map-1.png)
 
 ## Built With
