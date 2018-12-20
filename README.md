@@ -18,6 +18,11 @@ Main Screen
 It shows the map where will be shown the Touristic Places.
 ![Main_Screen_Map](xpluka-map-1.png)
 
+Map instructions
+It shows a message where you can see the features of the view.
+![Map_instructions](xpluka-map-instructions.png)
+
+
 ## Built With
 
 * [XCode](https://developer.apple.com/xcode/) - The mobile framework used
