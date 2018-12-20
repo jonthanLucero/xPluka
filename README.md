@@ -22,6 +22,19 @@ Map instructions
 It shows a message where you can see the features of the view.
 ![Map_instructions](xpluka-map-instructions.png)
 
+Register Touristic Place
+This view allows to create a new place with the required fields:<br/>
+* Name<br/>
+* Description<br/>
+* Type (you can selec from the list)<br/>
+* Location (fixed when the view is shown)<br/>
+* Qualification (validated from 1 to 10)<br/>
+* Observations (Commentary of the Touristic Place)<br/>
+
+![Register_touristic_place](xpluka-register-touristic-place.png)
+
+
+
 
 ## Built With
 
