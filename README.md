@@ -17,7 +17,7 @@ You need to follow the next steps:<br />
 Main Screen 
 It shows the map 
 
-![stack Overflow](http://lmsotfy.com/so.png)
+![Main_Screen_Map](xpluka-map-1.png)
 
 ## Built With
 
