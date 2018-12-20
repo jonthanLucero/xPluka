@@ -44,11 +44,19 @@ After the creation of the Touristic place it shows the tp in the map.
 ![map_show_touristic_places](xpluka-register-touristic-place-show-tp.png)
 
 **Edit Touristic Place**<br/>
-By pressing in the created place, it shows the register TP view with the last filled information, also allows to see the image gallery 
+By pressing in the created place, it shows the register TP view with the last filled information, also allows to see the image gallery by pressing in the image gallery button. 
 
 ![Register_touristic_update](xpluka-register-touristic-place-update-changes.png)
 
+**Delete Touristic Place**<br/>
+You can delete the touristic place by pressing the delete button, after that it shows a message to confirm the deletion.
 
+![Register_touristic_delete](xpluka-register-touristic-place-delete.png)
+
+**Show image gallery**<br/>
+By pressing the gallery button it shows the loaded photos that belongs to the touristic place, by pressing the new collection button it starts downloading new photos using the Flickr API.
+
+![Register_touristic_show_gallery](xpluka-photo-gallery.png)
 
 
 
