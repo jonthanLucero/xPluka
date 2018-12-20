@@ -113,6 +113,7 @@ extension UIViewController
         return imageMapName
     }
     
+    //It converts the date to String
     func convertDateTimeToString(_ date: Date,_ format: String) -> String
     {
         var dateTimeString:String = ""
@@ -122,6 +123,7 @@ extension UIViewController
         return dateTimeString
     }
     
+    //It converts the string in Date
     func convertStringToDateTime(_ date: String,_ time: String) -> Date
     {
         let dateFormat = "yyyy/MM/dd HH:mm:ss"

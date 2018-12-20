@@ -188,6 +188,7 @@ extension CoreDataStack {
         return vs
     }
     
+    //It fetchs all visits
     func fetchAllVisits(entityName: String) throws -> [Visit]?{
         let fr = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         guard let vs = try context.fetch(fr) as? [Visit] else{
@@ -196,6 +197,7 @@ extension CoreDataStack {
         return vs
     }
     
+    //Get the last touristicPlace Id
     func getLastTouristicPlaceId() -> String
     {
         var touristicPlaceId:String = ""
@@ -218,6 +220,7 @@ extension CoreDataStack {
         return touristicPlaceId
     }
     
+    //Get the last visitId
     func getLastVisitId() -> String
     {
         var visitId:String = ""

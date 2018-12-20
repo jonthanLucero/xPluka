@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,11 +59,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="Xpluka" id="CPd-1h-O83">
                         <barButtonItem key="backBarButtonItem" title="Back" id="XDA-SL-DtG"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_tpVisit_portrait.png" landscapeImage="icon_tpVisit_landscape.png" id="2FX-5j-p8y" userLabel="visit">
-                            <connections>
-                                <segue destination="t84-tr-Ung" kind="show" id="yrF-02-meR"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Info" image="icon_tpInfo_portrait.png" landscapeImage="icon_tpInfo_landscape.png" id="RM5-Gm-tVC">
+                                <connections>
+                                    <action selector="showInformation:" destination="BYZ-38-t0r" id="21J-Ml-J7u"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="icon_tpVisit_portrait.png" landscapeImage="icon_tpVisit_landscape.png" id="2FX-5j-p8y" userLabel="visit">
+                                <connections>
+                                    <segue destination="t84-tr-Ung" kind="show" id="yrF-02-meR"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="64n-S9-txQ" id="N54-OG-0T0"/>
@@ -418,11 +426,18 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Visit Plannification" id="9vr-Gi-Aix">
                         <barButtonItem key="backBarButtonItem" title="Back" id="8ue-u6-VGe"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mxd-al-WSd">
-                            <connections>
-                                <action selector="addVisit:" destination="t84-tr-Ung" id="OzW-kG-mhB"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="icon_tpInfo_portrait.png" landscapeImage="icon_tpInfo_landscape.png" id="ThN-rj-QhP" userLabel="Info">
+                                <connections>
+                                    <action selector="showInfo:" destination="t84-tr-Ung" id="xvB-Hn-ZNl"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="mxd-al-WSd">
+                                <connections>
+                                    <action selector="addVisit:" destination="t84-tr-Ung" id="OzW-kG-mhB"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="lCZ-0W-9NB" id="eLA-PD-vDy"/>
@@ -723,6 +738,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_tpInfo_landscape.png" width="50" height="50"/>
+        <image name="icon_tpInfo_portrait.png" width="25" height="25"/>
         <image name="icon_tpVisit_landscape.png" width="50" height="50"/>
         <image name="icon_tpVisit_portrait.png" width="25" height="25"/>
         <image name="icon_tp_setPhotoGallery.png" width="25" height="25"/>

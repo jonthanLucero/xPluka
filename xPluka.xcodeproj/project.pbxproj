@@ -46,6 +46,8 @@
 		B5F7DB2721C960D700374070 /* VisitsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7DB2621C960D700374070 /* VisitsListViewController.swift */; };
 		B5F7DB2921C964FD00374070 /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7DB2821C964FD00374070 /* VisitTableViewCell.swift */; };
 		B5F7DB2D21C9723400374070 /* VisitRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7DB2C21C9723400374070 /* VisitRegisterViewController.swift */; };
+		B5F7DB2F21CB304000374070 /* icon_tpInfo_landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7DB2E21CB304000374070 /* icon_tpInfo_landscape.png */; };
+		B5F7DB3121CB307700374070 /* icon_tpInfo_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = B5F7DB3021CB307700374070 /* icon_tpInfo_portrait.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		B5F7DB2621C960D700374070 /* VisitsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsListViewController.swift; sourceTree = "<group>"; };
 		B5F7DB2821C964FD00374070 /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
 		B5F7DB2C21C9723400374070 /* VisitRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitRegisterViewController.swift; sourceTree = "<group>"; };
+		B5F7DB2E21CB304000374070 /* icon_tpInfo_landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tpInfo_landscape.png; sourceTree = "<group>"; };
+		B5F7DB3021CB307700374070 /* icon_tpInfo_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tpInfo_portrait.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,8 @@
 				B528A68F21C485A6002B3272 /* icon_tp_trash.png */,
 				B528A68D21C47151002B3272 /* icon_tp_lake.png */,
 				B528A68B21C46E30002B3272 /* icon_tp_mountain.png */,
+				B5F7DB2E21CB304000374070 /* icon_tpInfo_landscape.png */,
+				B5F7DB3021CB307700374070 /* icon_tpInfo_portrait.png */,
 				B528A68921C46E09002B3272 /* icon_tp_beach.png */,
 				B528A68721C46DAE002B3272 /* icon_tp_forest.png */,
 				B528A66D21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png */,
@@ -273,12 +279,14 @@
 				B528A68C21C46E30002B3272 /* icon_tp_mountain.png in Resources */,
 				B58CF16721B867CD00854D40 /* Assets.xcassets in Resources */,
 				B5B6244621BB336900588CE5 /* icon_tp_setLocation2.png in Resources */,
+				B5F7DB3121CB307700374070 /* icon_tpInfo_portrait.png in Resources */,
 				B528A68E21C47151002B3272 /* icon_tp_lake.png in Resources */,
 				B58CF16221B867CB00854D40 /* Main.storyboard in Resources */,
 				B528A68821C46DAF002B3272 /* icon_tp_forest.png in Resources */,
 				B5B6243D21B9ADE100588CE5 /* icon_tpAdd_portrait.png in Resources */,
 				B5B6243E21B9ADE100588CE5 /* icon_tpVisit_landscape.png in Resources */,
 				B528A66E21BF3AD0002B3272 /* icon_tp_setPhotoGallery.png in Resources */,
+				B5F7DB2F21CB304000374070 /* icon_tpInfo_landscape.png in Resources */,
 				B58CF18321B8A51D00854D40 /* xpluka_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

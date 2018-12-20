@@ -43,18 +43,35 @@ public class MainMapViewController : UIViewController, MKMapViewDelegate,TPRegis
     }
     
     public override func viewWillAppear(_ animated: Bool) {
-        print("Se quiere recargar el mapa="+String(reloadMapStatus))
         if (reloadMapStatus)
         {
             self.mapView.removeAnnotations(self.mapView.annotations)
-            
-            print("Se refresca el mapa")
             
             //If there are pins in the map then show them
             if let touristicPlaces = loadAllTouristicPlaces() {
                 showTouristicPlaces(touristicPlaces)
             }
         }
+    }
+    @IBAction func showInformation(_ sender: Any) {
+        
+        var message = "\nIt allows to create Touristic Places by long pressing in the map surface.\n\n"
+        message += "After the creation, it can be seen with an icon referent to its type.\n\n"
+        message += "By pressing in a Touristic Place, then it allows to update its information.\n"
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .justified
+        
+        // Create the string object
+        let alertMessge = NSMutableAttributedString(string: message,
+            attributes: [
+                NSAttributedStringKey.paragraphStyle: paragraphStyle,
+                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 13),
+                NSAttributedStringKey.foregroundColor : UIColor.black
+            ]
+        )
+        
+        showInformation(withMessage: alertMessge)
     }
     
     //It opens the TPRegisterViewController where the touristic place is registered(NEW)
@@ -177,16 +194,9 @@ extension MainMapViewController {
         pinAnnotation!.coordinate = locCoord
         transactionMode = "UPDATE"
         viewControllerTitleForTransactionMode = "Edit Touristic Place"
-        print("Coordinates lat="+String(annotation.coordinate.latitude))
-        print("Coordinates long="+String(annotation.coordinate.longitude))
         touristicPlace = nil
         if let tp = loadTouristicPlace(latitude: String(annotation.coordinate.latitude),longitude: String(annotation.coordinate.longitude))
         {
-            print("Datos tp enviados 0")
-            print("nombre "+(tp.tpName!))
-            print("latitud "+(tp.tpLatitude!))
-            print("longitud "+(tp.tpLongitude!))
-            
             touristicPlace = tp
         }
         performSegue(withIdentifier: "registerTPSegue", sender: pinAnnotation)
@@ -208,6 +218,16 @@ extension MainMapViewController {
             showInfo(withTitle: "Error", withMessage: "Error while fetching Visits: \(error)")
         }
         return vs
+    }
+    
+    //it shows a message to warn the user of any issue or complete process.
+    func showInformation(withTitle: String = "Instructions", withMessage: NSMutableAttributedString,action: (() -> Void)? = nil){
+        performUIUpdatesOnMain {
+            let ac = UIAlertController(title: withTitle, message: "", preferredStyle: .alert)
+            ac.setValue(withMessage, forKey: "attributedMessage")
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alertAction) in action?()}))
+            self.present(ac, animated: true)
+        }
     }
     
 }

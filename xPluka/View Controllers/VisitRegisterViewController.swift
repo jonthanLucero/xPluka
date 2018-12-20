@@ -40,7 +40,6 @@ class VisitRegisterViewController: UIViewController
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        print("Mode="+visitTransactionMode)
         configureDateTimePickers()
         configureTouristicPlacePicker()
         
@@ -154,6 +153,7 @@ class VisitRegisterViewController: UIViewController
     }
 
     
+    //It saves the changes of the visit
     @IBAction func SaveChanges(_ sender: Any)
     {
         //Test TouristicPlace
@@ -206,6 +206,7 @@ class VisitRegisterViewController: UIViewController
         
     }
     
+    //It shows a message when the visit was created
     public func showInfoDismissViewController(withTitle: String = "Info", withMessage: String,action: (() -> Void)? = nil){
         performUIUpdatesOnMain
             {
@@ -221,6 +222,7 @@ class VisitRegisterViewController: UIViewController
     }
     
     
+    //It configures the touristic place pickerview
     func configureTouristicPlacePicker()
     {
         fetchData()
@@ -228,6 +230,7 @@ class VisitRegisterViewController: UIViewController
         touristicPlace.inputView = pickerView
     }
     
+    //It fetchs the data of touristic places
     func fetchData()
     {
         var tps: [TouristicPlace]?
@@ -244,6 +247,7 @@ class VisitRegisterViewController: UIViewController
     }
 }
 
+//It loads the information of the touristic places set in the pickerview
 extension VisitRegisterViewController:UIPickerViewDelegate,UIPickerViewDataSource
 {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

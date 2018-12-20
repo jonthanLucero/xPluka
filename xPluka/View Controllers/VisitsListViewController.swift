@@ -81,6 +81,28 @@ class VisitListViewController: UIViewController {
         performSegue(withIdentifier: "showVisitViewController", sender: nil)
     }
     
+    @IBAction func showInfo(_ sender: Any) {
+        var message = "\nIt allows to plannficate Visits by pressing in the + button.\n\n"
+        message += "After the creation, it can be seen the plannification date with its icon.\n\n"
+        message += "By sliding a visit in the list it appears a tag to delete it.\n\n"
+        message += "By pressing in a visit, then it allows to update its information.\n"
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .justified
+        
+        // Create the string object
+        let alertMessge = NSMutableAttributedString(string: message,
+                                                    attributes: [
+                                                        NSAttributedStringKey.paragraphStyle: paragraphStyle,
+                                                        NSAttributedStringKey.font : UIFont.systemFont(ofSize: 13),
+                                                        NSAttributedStringKey.foregroundColor : UIColor.black
+            ]
+        )
+        
+        showInformation(withMessage: alertMessge)
+    }
+    
+    
     //It opens the TPRegisterViewController where the touristic place is registered(NEW)
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showVisitViewController"
@@ -126,6 +148,16 @@ extension VisitListViewController: NSFetchedResultsControllerDelegate {
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
         
+    }
+    
+    //it shows a message to warn the user of any issue or complete process.
+    func showInformation(withTitle: String = "Instructions", withMessage: NSMutableAttributedString,action: (() -> Void)? = nil){
+        performUIUpdatesOnMain {
+            let ac = UIAlertController(title: withTitle, message: "", preferredStyle: .alert)
+            ac.setValue(withMessage, forKey: "attributedMessage")
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alertAction) in action?()}))
+            self.present(ac, animated: true)
+        }
     }
     
 

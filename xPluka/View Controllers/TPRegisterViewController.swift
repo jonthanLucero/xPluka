@@ -50,9 +50,9 @@ public class TPRegisterViewController: UIViewController
         tpLatitude.text = tpLatitudeReceived
         tpLongitude.text = tpLongitudeReceived
         
-        print("parametros recibidos="+tpTransactionMode)
         self.hideKeyboardWhenTappedAround()
         tpShowGallery.isEnabled = true
+        
         if(tpTransactionMode == "INSERT")
         {
             tpShowGallery.isEnabled = false
@@ -61,11 +61,6 @@ public class TPRegisterViewController: UIViewController
         
         if(tpTransactionMode == "UPDATE")
         {
-            print("Datos tp recibidos")
-            print("nombre "+(tpTouristicPlace?.tpName!)!)
-            print("latitud "+(tpTouristicPlace?.tpLatitude!)!)
-            print("longitud "+(tpTouristicPlace?.tpLongitude!)!)
-            
             tpName.text = tpTouristicPlace?.tpName
             tpDescription.text = tpTouristicPlace?.tpDescription
             tpType.text =  tpTouristicPlace?.tpType
@@ -77,13 +72,9 @@ public class TPRegisterViewController: UIViewController
         }
     }
 
+    //It shows the list of photos that belongs to the touristic place
     @IBAction func tpShowImageGallery(_ sender: Any)
     {
-        //It shows the PhotoAlbumViewController where it displays the photo gallery.
-        print("Data to send to ShowPhotoGallery")
-        print("tpName Photo "+(tpTouristicPlace?.tpName)!)
-        print("tpLatitude Photo "+(tpTouristicPlace?.tpLatitude)!)
-        print("tpLongitude Photo"+(tpTouristicPlace?.tpLongitude)!)
         performSegue(withIdentifier: "showPhotoGallerySegue", sender: tpTouristicPlace)
     }
     
@@ -149,7 +140,7 @@ public class TPRegisterViewController: UIViewController
         }
     }
     
-    
+    //It deletes the touristic place
     @IBAction func tpDeleteTPChanges(_ sender: Any) {
         showInfoDeleteDismissViewController(withMessage: "Do you wish to delete this Touristic Place")
     }
@@ -187,14 +178,9 @@ public class TPRegisterViewController: UIViewController
             let OKAction = UIAlertAction(title: "OK", style: .default)
             {
                 (action:UIAlertAction!) in
-                //let tpNameDeleted = self.tpTouristicPlace?.tpName
-                let tpLatitudeDeleted = self.tpTouristicPlace?.tpLatitude
-                let tpLongitudeDeleted = self.tpTouristicPlace?.tpLongitude
                 
-                print("Va a borrar un tp")
-                if let tp = self.loadTouristicPlace(latitude: tpLatitudeDeleted!,longitude: tpLongitudeDeleted!)
+                if let tp = self.loadTouristicPlaceById(tpId: (self.tpTouristicPlace?.tpId)!)
                 {
-                    print("Encontro el tp para borrar")
                     CoreDataStack.shared().context.delete(tp)
                     self.save()
                     
@@ -212,6 +198,7 @@ public class TPRegisterViewController: UIViewController
         }
     }
     
+    //It shows a message when the touristic place was created
     public func showInfoDismissViewController(withTitle: String = "Info", withMessage: String,action: (() -> Void)? = nil){
         performUIUpdatesOnMain
             {
@@ -227,6 +214,7 @@ public class TPRegisterViewController: UIViewController
         }
     }
     
+    //It configures the uipicker for the touristic type
     func createtpTypePickerView()
     {
         let tpTypePicker = UIPickerView()
@@ -235,6 +223,7 @@ public class TPRegisterViewController: UIViewController
     }
 }
 
+//It helps to get the information of the pickerView
 extension TPRegisterViewController:UIPickerViewDelegate,UIPickerViewDataSource
 {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
