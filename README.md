@@ -14,7 +14,7 @@ You need to follow the next steps:<br />
 
 **Executed Example**
 
-**Main Screen **<br/>
+**Main Screen**<br/>
 It shows the map where will be shown the Touristic Places.
 ![Main_Screen_Map](xpluka-map-1.png)
 
@@ -42,6 +42,11 @@ After filling all the required fields then the user can press the button save ch
 After the creation of the Touristic place it shows the tp in the map. 
 
 ![map_show_touristic_places](xpluka-register-touristic-place-show-tp.png)
+
+**Edit Touristic Place**<br/>
+By pressing in the created place, it shows the register TP view with the last filled information, also allows to see the image gallery 
+
+![Register_touristic_update](xpluka-register-touristic-place-update-changes.png)
 
 
 
