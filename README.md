@@ -33,12 +33,12 @@ This view allows to create a new place with the required fields:<br/>
 
 ![Register_touristic_place](xpluka-register-touristic-place.png)
 
-Save Touristic Place 
+Save Touristic Place <br/>
 After filling all the required fields then the user can press the button save changes, it shows a message where the place is created
 
 ![Register_touristic_save](xpluka-register-touristic-place-save-changes.png)
 
-Touristic Place shown in the map
+Touristic Place shown in the map<br/>
 After the creation of the Touristic place it shows the tp in the map. 
 
 ![map_show_touristic_places](xpluka-register-touristic-place-show-tp.png)
