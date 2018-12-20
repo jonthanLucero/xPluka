@@ -68,6 +68,16 @@ By pressing the + button then it shows the information of the visit to create.<b
 
 ![Add_new_visit](xpluka-register-visit_1.png)<br/>
 
+**Save New Visit**<br/>
+After pressing save button it shows a message for visit creation confirmation.
+
+![Save_new_visit](xpluka-register-visit-save-changes_1.png)
+
+**Visit List Instructions**<br/>
+It shows a message where you can see the features of the view of the visit list.
+
+![Visit_list_instructions](xpluka-visit-list-instructions_1.png)
+
 
 ## Built With
 
