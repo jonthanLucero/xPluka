@@ -69,14 +69,19 @@ By pressing the + button then it shows the information of the visit to create.<b
 ![Add_new_visit](xpluka-register-visit_1.png)<br/>
 
 **Save New Visit**<br/>
-After pressing save button it shows a message for visit creation confirmation.
+After pressing save button it shows a message for visit creation confirmation.<br/>
 
-![Save_new_visit](xpluka-register-visit-save-changes_1.png)
+![Save_new_visit](xpluka-register-visit-save-changes_1.png)<br/>
 
 **Visit List Instructions**<br/>
-It shows a message where you can see the features of the view of the visit list.
+It shows a message where you can see the features of the view of the visit list.<br/>
 
-![Visit_list_instructions](xpluka-visit-list-instructions_1.png)
+![Visit_list_instructions](xpluka-visit-list-instructions_1.png)<br/>
+
+**Visit Delete**<br/>
+The visit can be deleted by sliding in one in the list, it shows a delete button, after pressing it the deletes the visit and reloads the list.<br/>
+
+![Visit_list_delete](xpluka-visit-list-delete.png)<br/>
 
 
 ## Built With
