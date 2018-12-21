@@ -62,7 +62,7 @@
 		B528A67F21C33347002B3272 /* PhotoAlbumViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoAlbumViewController+Extension.swift"; sourceTree = "<group>"; };
 		B528A68121C33949002B3272 /* tpStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tpStructures.swift; sourceTree = "<group>"; };
 		B528A68321C402C2002B3272 /* TPValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPValidations.swift; sourceTree = "<group>"; };
-		B528A68721C46DAE002B3272 /* icon_tp_forest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_tp_forest.png; path = ../../../../../../../Downloads/icon_tp_forest.png; sourceTree = "<group>"; };
+		B528A68721C46DAE002B3272 /* icon_tp_forest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_forest.png; sourceTree = "<group>"; };
 		B528A68921C46E09002B3272 /* icon_tp_beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_beach.png; sourceTree = "<group>"; };
 		B528A68B21C46E30002B3272 /* icon_tp_mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_mountain.png; sourceTree = "<group>"; };
 		B528A68D21C47151002B3272 /* icon_tp_lake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tp_lake.png; sourceTree = "<group>"; };

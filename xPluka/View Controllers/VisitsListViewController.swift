@@ -49,6 +49,17 @@ class VisitListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Visit Plannification"
+        let tlabel = UILabel()
+        tlabel.text = self.title
+        tlabel.textColor = UIColor.white
+        tlabel.font = UIFont(name: "Helvetica-Bold", size: 30.0)
+        tlabel.backgroundColor = UIColor.clear
+        tlabel.adjustsFontSizeToFitWidth = true
+        tlabel.textAlignment = .center;
+        self.navigationItem.titleView = tlabel
+        
+        
         self.setupView()
         
         do {
@@ -183,7 +194,8 @@ extension VisitListViewController: UITableViewDataSource {
         let plannificationDateEnd = convertDateTimeToString(visit.vPlannificationDateEnd!,"E, MMM d HH:mm")
         let yearBegin = convertDateTimeToString(visit.vPlannificationDateBegin!, "yyyy")
         let yearEnd = convertDateTimeToString(visit.vPlannificationDateEnd!, "yyyy")
-        
+       
+        cell.touristicPlaceName.adjustsFontSizeToFitWidth = true
         cell.touristicPlaceName.text = visit.touristiPlaceVisit?.tpName
         cell.touristicPlaceImageType.image = UIImage(named: loadImageMapName((visit.touristiPlaceVisit?.tpType!)!))
         cell.startDate.text = plannificationDateBegin

@@ -19,6 +19,7 @@ class VisitTableViewCell: UITableViewCell {
     @IBOutlet weak var endYear: UILabel!
     @IBOutlet weak var startYear: UILabel!
     @IBOutlet weak var endDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

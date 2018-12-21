@@ -130,6 +130,7 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
     //it updates the  status of the label
     private func updateStatusLabel(_ text: String) {
         self.performUIUpdatesOnMain {
+            self.labelStatus.adjustsFontSizeToFitWidth = true
             self.labelStatus.text = text
         }
     }
